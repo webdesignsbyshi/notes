@@ -1,0 +1,25 @@
+{
+    "notes": [
+        {
+            "id": "0",
+            "title": "New Note",
+            "text": "This is a new note",
+            "color": "#FBF608",
+            "isMenuVisible": "false"
+        },
+        {
+            "id": "1",
+            "title": "Hello there!",
+            "text": "This is a test note",
+            "color": "#9BCCFD",
+            "isMenuVisible": "false"
+        },
+        {
+            "id": "2",
+            "title": "Groceries",
+            "text": "Eggs, Milk, Bread, Wine",
+            "color": "#9BCCFD",
+            "isMenuVisible": "false"
+        }
+    ]
+}

@@ -1,0 +1,118 @@
+.nav-wrapper {
+    padding: 0 0 0 1rem;
+
+    &__text {
+        position: absolute;
+        color: #fff;
+        display: inline-block;
+        font-size: 2.1rem;
+        padding: 0;
+    }
+
+    &__button {
+    }
+}
+
+.notes {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 2rem 1rem;
+
+    &__icon {
+        position: absolute;
+        right: 0;
+        margin-top: 0.5rem;
+        cursor: pointer;
+    }
+
+    &__note {
+        width: calc(25% - 1rem);
+        max-width: 100%;
+        margin: 0 1rem 1rem;
+        display: flex;
+        flex-direction: column;
+        position: relative;
+
+        &:nth-child(1n) {
+            margin-left: 0;
+        }
+
+        &:nth-child(4n) {
+            margin-right: 0;
+        }
+    }
+
+    &__input {
+        height: 2.5rem !important;
+        padding: 0 0.5rem !important;
+        width: calc(100% - 1rem) !important;
+    }
+
+    &__textarea {
+        height: 125px !important;
+        border-bottom: none !important;
+        padding: 0.8rem 0.5rem !important;
+
+        &:focus:not([readonly]) {
+            border-bottom: none !important;
+            -webkit-box-shadow: none !important;
+            box-shadow: none !important;
+        }
+    }
+}
+
+.notes-dropdown {
+    display: block;
+    width: 100px;
+    left: 140px;
+    top: 35px;
+    height: auto;
+    transform-origin: 0px 0px;
+    opacity: 1;
+    transform: scaleX(1) scaleY(1);
+
+    &__link {
+        display: flex !important;
+        font-size: 1rem !important;
+        padding: 0.875rem !important;
+    }
+
+    &__icon {
+        font-size: 1rem;
+        margin: 0 0.5rem 0 0;
+    }
+
+    &__colors-wrapper {
+        width: 110px;
+        max-width: 100%;
+        height: 65px;
+        background-color: red;
+        display: flex;
+        flex-wrap: wrap;
+    }
+
+    &__colors {
+        width: 33.3%;
+        max-width: 100%;
+        height: auto;
+        cursor: pointer;
+    }
+}
+
+@media only screen and (max-width: 480px) {
+    .nav-wrapper {
+        &__button-text {
+            display: none;
+        }
+
+        &__button-icon {
+            margin-right: 0 !important;
+        }
+    }
+    .notes {
+        &__note {
+            width: 100%;
+            margin: 0 0 1rem;
+        }
+    }
+}

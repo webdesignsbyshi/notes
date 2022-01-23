@@ -1,4 +1,13 @@
 import { createApp } from 'vue'
 import App from './App.vue'
+// import axios from 'axios'
+import VueCookies from 'vue3-cookies'
 
-createApp(App).mount('#app')
+import '@/assets/styles/styles.scss'
+
+const app = createApp(App)
+// app.config.globalProperties.axios = axios
+app.use(VueCookies)
+app.mount('#app')
+
+// createApp(App).mount('#app')
