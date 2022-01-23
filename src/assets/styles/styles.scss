@@ -18,6 +18,13 @@
     flex-wrap: wrap;
     margin: 2rem 1rem;
 
+    &__empty-message {
+        width: 100%;
+        text-align: center;
+        font-size: 1.25rem;
+        padding: 2rem 0;
+    }
+
     &__icon {
         position: absolute;
         right: 0;
@@ -63,18 +70,23 @@
 
 .notes-dropdown {
     display: block;
-    width: 100px;
-    left: 140px;
+    width: 130px;
+    left: unset;
+    right: 15px;
     top: 35px;
     height: auto;
     transform-origin: 0px 0px;
     opacity: 1;
     transform: scaleX(1) scaleY(1);
 
+    li {
+        min-height: 100%;
+    }
+
     &__link {
         display: flex !important;
         font-size: 1rem !important;
-        padding: 0.875rem !important;
+        padding: 0.6rem 0.875rem !important;
     }
 
     &__icon {
@@ -83,9 +95,9 @@
     }
 
     &__colors-wrapper {
-        width: 110px;
+        width: 130px;
         max-width: 100%;
-        height: 65px;
+        height: 75px;
         background-color: red;
         display: flex;
         flex-wrap: wrap;
