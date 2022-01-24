@@ -1,14 +1,15 @@
 <template>
-  <div class="notes">
+  <div class="notes" >
     <div v-if="notes.length === 0" class="notes__empty-message">
       You do not have any notes to view. Click "Add Note" to begin!
     </div>
     <div v-for="(note, i) in notes"
          :key="i"
-         :style="{background: note.color}" class="notes__note note">
+         :style="{background: note.color}" class="notes__note">
       <i @click="toggleNoteMenu(note)" class="material-icons notes__icon">more_vert</i>
-      <ul v-if="note.isMenuVisible" id="dropdown1" class="notes-dropdown dropdown-content" tabindex="0">
-        <li @click="deleteNote(i)" tabindex="0">
+      <ul v-if="note.isMenuVisible"
+          v-click-away="onClickAwayFromMenu" class="notes-dropdown dropdown-content">
+        <li @click="deleteNote(i)">
           <a href="#!" class="notes-dropdown__link">
             <i @click="deleteNote(i)" class="notes-dropdown__icon material-icons">delete</i>
             Delete
@@ -21,9 +22,9 @@
                :style="{background: color}" class="notes-dropdown__colors menu"></div>
         </div>
       </ul>
-      <input v-model="note.title" id="first_name" type="text" class="notes__input" maxlength="35">
+      <input v-model="note.title" type="text" class="notes__input" maxlength="35">
       <textarea v-model="note.text"
-                :keyup="editNote()" id="textarea1" class="notes__textarea materialize-textarea"></textarea>
+                :keyup="editNote()" class="notes__textarea materialize-textarea"></textarea>
     </div>
   </div>
 </template>
@@ -50,6 +51,11 @@ export default {
     },
     editNote () {
       this.$cookies.set('notesList', JSON.stringify(this.notes))
+    },
+    onClickAwayFromMenu () {
+      this.notes.forEach(note => {
+        note.isMenuVisible = false
+      })
     }
   }
 }

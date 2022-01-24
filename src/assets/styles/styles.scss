@@ -56,7 +56,8 @@
     }
 
     &__textarea {
-        height: 125px !important;
+        height: 150px !important;
+        max-height: 100% !important;
         border-bottom: none !important;
         padding: 0.8rem 0.5rem !important;
 
