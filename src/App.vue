@@ -1,6 +1,6 @@
 <template>
-  <nav>
-    <div class="nav-wrapper">
+  <nav class="nav-wrapper">
+    <div class="nav-wrapper__inner">
       <span class="nav-wrapper__text">organize.me</span>
       <ul class="right">
         <li>
@@ -50,10 +50,10 @@ export default {
         }
       ],
       colors: [
-        '#F8FFCA',
+        '#B19FF9',
         '#9BCCFD',
-        '#D95980',
-        '#F6B405',
+        '#FF66E9',
+        '#B8EE30',
         '#D0E3FF',
         '#FBF608'
       ]
@@ -66,7 +66,7 @@ export default {
       var notesList = this.$cookies.get('notesList')
       this.notesList = JSON.parse(notesList)
 
-      this.notesList.forEach((note, index) => {
+      this.notesList.forEach(note => {
         note.isMenuVisible = false
       })
     }
@@ -85,12 +85,3 @@ export default {
   }
 }
 </script>
-
-<style>
-  #app {
-    font-family: Avenir, Helvetica, Arial, sans-serif;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
-    color: #2c3e50;
-  }
-</style>

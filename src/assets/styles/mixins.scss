@@ -1,0 +1,15 @@
+@mixin input-focus($color) {
+    &:focus:not([readonly]) {
+        border-bottom: 1px solid $color !important;
+        -webkit-box-shadow: 0 1px 0 0 $color !important;
+        box-shadow: 0 1px 0 0 $color !important;
+    }
+
+    @if $color == none {
+        &:focus:not([readonly]) {
+            border-bottom: $color !important;
+            -webkit-box-shadow: $color !important;
+            box-shadow: $color !important;
+        }
+    }
+}

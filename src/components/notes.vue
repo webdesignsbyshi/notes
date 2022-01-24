@@ -22,7 +22,13 @@
                :style="{background: color}" class="notes-dropdown__colors menu"></div>
         </div>
       </ul>
-      <input v-model="note.title" type="text" class="notes__input" maxlength="35">
+      <input v-model="note.title"
+             :class="{'notes__input--purple': note.color === '#B19FF9',
+                      'notes__input--darker-blue': note.color === '#9BCCFD',
+                      'notes__input--pink': note.color === '#FF66E9',
+                      'notes__input--green': note.color === '#B8EE30',
+                      'notes__input--lighter-blue': note.color === '#D0E3FF',
+                      'notes__input--yellow': note.color === '#FBF608'}" type="text" class="notes__input" maxlength="35">
       <textarea v-model="note.text"
                 :keyup="editNote()" class="notes__textarea materialize-textarea"></textarea>
     </div>

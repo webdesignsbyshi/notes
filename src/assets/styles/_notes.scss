@@ -1,0 +1,84 @@
+.notes {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 2rem 1rem;
+
+    &__empty-message {
+        width: 100%;
+        text-align: center;
+        font-size: 1.25rem;
+        padding: 2rem 0;
+    }
+
+    &__icon {
+        position: absolute;
+        right: 0;
+        margin-top: 0.5rem;
+        cursor: pointer;
+    }
+
+    &__note {
+        width: calc(25% - 1rem);
+        max-width: 100%;
+        margin: 0 1rem 1rem;
+        display: flex;
+        flex-direction: column;
+        position: relative;
+
+        &:nth-child(1n) {
+            margin-left: 0;
+        }
+
+        &:nth-child(4n) {
+            margin-right: 0;
+        }
+    }
+
+    &__input {
+        width: calc(100% - 1rem) !important;
+        height: 2.5rem !important;
+        padding: 0 0.5rem !important;
+        font-weight: 500;
+
+        &--purple {
+            @include input-focus($color-purple-dark);
+        }
+
+        &--darker-blue {
+            @include input-focus($color-darker-blue-dark);
+        }
+
+        &--pink {
+            @include input-focus($color-pink-dark);
+        }
+
+        &--green {
+            @include input-focus($color-green-dark);
+        }
+
+        &--lighter-blue {
+            @include input-focus($color-lighter-blue-dark);
+        }
+
+        &--yellow {
+            @include input-focus($color-yellow-dark);
+        }
+    }
+
+    &__textarea {
+        height: 150px !important;
+        max-height: 100% !important;
+        border-bottom: none !important;
+        padding: 0.8rem 0.5rem !important;
+        @include input-focus($color-none);
+    }
+}
+
+@media only screen and (max-width: 480px) {
+    .notes {
+        &__note {
+            width: 100%;
+            margin: 0 0 1rem;
+        }
+    }
+}

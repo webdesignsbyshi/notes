@@ -1,0 +1,41 @@
+.nav-wrapper {
+    background: $color-main;
+
+    &__inner {
+        padding: 0 0 0 1rem;
+    }
+
+    &__text {
+        position: absolute;
+        color: #fff;
+        display: inline-block;
+        font-size: 2.1rem;
+        padding: 0;
+    }
+
+    &__button {
+        background: $color-white;
+        color: $color-main;
+
+        &:focus, &:hover {
+            background: $color-main-dark;
+            color: $color-white;
+        }
+    }
+
+    &__button-icon {
+        margin-right: 5px !important;
+    }
+}
+
+@media only screen and (max-width: 480px) {
+    .nav-wrapper {
+        &__button-text {
+            display: none;
+        }
+
+        &__button-icon {
+            margin-right: 0 !important;
+        }
+    }
+}
